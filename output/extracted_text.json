@@ -1,0 +1,54 @@
+[
+    {
+        "page": 1,
+        "text": ""
+    },
+    {
+        "page": 2,
+        "text": "Learning Outcome\nThe Scenario\nWhy Generic Programming\nGeneric Methods\nGeneric Methods: Implementation and Compile-Time Translation\nGeneric Methods: With return Type\nGeneric Classes\nPrograms\n"
+    },
+    {
+        "page": 3,
+        "text": "To understand the objective of generic programming\nTo be able to implement generic classes and methods\n"
+    },
+    {
+        "page": 4,
+        "text": "Imagine that you’ve just finished writing a wonderful Sorting class that works perfectly for\nInteger numbers.\nBut what about a sorting to hold\n… Strings?\n… or Double?\n… or Characters?\nNotice that in the process of sorting.\nWe’ve given too much information to the class (supplier).\nThe algorithm (client) should specify what to hold.\nThe sorting shouldn’t care about what it holds.\nThe sorting should simply to sort whatever items it holds like Integers String, Characters\nDouble or Records etc.,\nTo achieve the above said Scenario, we use\nGeneric Classes and Methods\n"
+    },
+    {
+        "page": 5,
+        "text": "Generic methods and generic classes (and interfaces) enable you to specify, with a single\nmethod declaration, a set of related methods, or with a single class declaration, a set of\nrelated types, respectively.\nGenerics also provide compile-time type safety that allows you to catch invalid types at\ncompile time.\nJava generics\nlets you write code that is safer and easier to read\nis especially useful for general data structures, such as ArrayList\nStarting with version 5.0, Java allows class definitions with parameters for types.\nAll generic class and method declarations have a type-parameter section delimited by\nangle brackets (< and >).\ngeneric programming = programming with classes and methods \nparameterized with types \n"
+    },
+    {
+        "page": 6,
+        "text": "Overloaded methods are often used to perform similar operations on different types of data.\nProgram – 1 :\npublic class OverLoadedMethods {\npublic static void main(String[] args) {\nInteger[] integerArray = { 3, 5, 1, 6, 2, 4, 7 };\nDouble[] doubleArray = { 2.2, 4.4, 6.6, 3.3, 7.7, 5.5, 1.1 };\nCharacter[] characterArray = { 'G', 'E', 'N', 'E', 'R', 'I', 'C'};\nSystem.out.println( \"Array integerArray contains:\" );\nprintArray( integerArray );\nSystem.out.println( \"\\nArray doubleArray contains:\" );\nprintArray( doubleArray );\nSystem.out.println( \"\\nArray characterArray contains:\" );\nprintArray( characterArray );\n}\npublic static void printArray(Integer[] inputArray){\nfor ( Integer element : inputArray )\nSystem.out.printf( \"%s \", element );\nSystem.out.println();\n}\npublic static void printArray(Double[] inputArray){\nfor ( Double element : inputArray )\nSystem.out.printf( \"%s \", element );\nSystem.out.println();\n}\npublic static void printArray(Character[] inputArray){\nfor ( Character element : inputArray )\nSystem.out.printf( \"%s \", element );\nSystem.out.println();\n}\n}\nThis\nmethod\nis\ninvoked\nto\nprint the integer values\nThis\nmethod\nis\ninvoked\nto\nprint the Double values\nThis\nmethod\nis\ninvoked\nto\nprint the Character values\nOutput : \n"
+    },
+    {
+        "page": 7,
+        "text": "If the operations performed by several overloaded methods are identical for each argument\ntype, the overloaded methods can be more compactly and conveniently coded using a\ngeneric- method.\nYou can write a single generic method declaration that can be called with arguments of\ndifferent types.\nBased on the types of the arguments passed to the generic method, the compiler handles\neach method call appropriately.\nBy adding a generic method which prints any type of data from the array.\nBy just adding the given block code and removing all the overloaded methods to the above\nprogram.\npublic static <T>  void printArray(T[] inputArray){\nfor ( T element : inputArray )\nSystem.out.printf( \"%s \", element );\nSystem.out.println();\n}\n"
+    },
+    {
+        "page": 8,
+        "text": "Program – 2 : Demonstration of generic method \npublic class GenericMethodTest {\npublic static void main(String[] args) {\nInteger[] integerArray = { 3, 5, 1, 6, 2, 4, 7 };\nDouble[] doubleArray = { 2.2, 4.4, 6.6, 3.3, 7.7, 5.5, 1.1 };\nCharacter[] characterArray = { 'G', 'E', 'N', 'E', 'R', 'I', 'C'};\nSystem.out.println( \"Array integerArray contains:\" );\nprintArray( integerArray );\nSystem.out.println( \"\\nArray doubleArray contains:\" );\nprintArray( doubleArray );\nSystem.out.println( \"\\nArray characterArray contains:\" );\nprintArray( characterArray );\n}\npublic static <T>  void printArray(T[] inputArray){\nfor ( T element : inputArray )\nSystem.out.printf( \"%s \", element );\nSystem.out.println();\n}\n}\nOutput : \n"
+    },
+    {
+        "page": 9,
+        "text": "Generic method maximum determines and return a the largest of its three arguments of the\nsame type.\nThe relational operator > cannot be used with reference types, but it’s possible to compare\ntwo objects of the same class if that class implements the generic interface Comparable<T>\n(package java.lang).\nLike generic classes, generic interfaces enable you to specify, with a single interface\ndeclaration, a set of related types.\nComparable<T> objects have a compareTo method.\nThe method must return zero if the objects are equal, a negative integer if object1 is less\nthan object2 or a positive integer if object1 is greater than object2.\nA benefit of implementing interface Comparable<T> is that Comparable<T> objects can be\nused with the sorting and searching methods of class Collections (package java.util).\n"
+    },
+    {
+        "page": 10,
+        "text": "Program – 3 : Demonstration of generic method with return type \npublic class MaximumTest {\npublic static void main(String[] args) {\nSystem.out.printf( \"Maximum of 3, 4 and 5 is %d\\n\",\nmaximum( 3, 4, 5 ));\nSystem.out.printf( \"Maximum of 6.6, 8.8 and 7.7 is %.1f\\n\",\nmaximum(6.6, 8.8, 7.7));\nSystem.out.printf( \"Maximum of pear, apple and orange is %s\\n\", \nmaximum(\"pear\", \"apple\", \"orange\"));\n}\npublic static < T extends Comparable< T > > T maximum( T x, T y, T z ){\nT max = x;\nif ( y.compareTo( max ) > 0 )\nmax = y;\nif ( z.compareTo( max ) > 0 )\nmax = z; \nreturn max;\n}\n}\nOutput : \n"
+    },
+    {
+        "page": 11,
+        "text": "Generic classes provide a means for describing the concept r class in a type-independent\nmanner.\nThese classes are known as parameterized classes or parameterized types because they\naccept one or more type parameters.\nGeneric class declared with one or more type parameters\nA type parameter for ArrayList denotes the element type\npublic class ArrayList<E>{\npublic ArrayList() { \n. . . \n}\npublic void add(E element) {\n. . . \n}\n. . .\n}\nCannot use a primitive type as a type variable\nArrayList<double> //Wrong\nUse corresponding wrapper class instead\nArrayList<Double>\n"
+    },
+    {
+        "page": 12,
+        "text": "Program – 4 : Demonstration of generic class \npublic class BoxGeneric<T> {\nprivate T t;\npublic void setT(T t){\nthis.t = t;\n}\npublic T getT(){\nreturn this.t;\n}\n}\npublic class BoxGenerixTest {\npublic static void main(String[] args) {\nBoxGeneric<Integer> bgi = new BoxGeneric<Integer>();\nbgi.setT(10);\nSystem.out.println(\"The Integer value = \" + bgi.getT());\nBoxGeneric<String> bgii = new BoxGeneric<String>();\nbgii.setT(\"Generic\");\nSystem.out.print(\"The string value = \" + bgii.getT());\n}\n}\nOutput : \n"
+    },
+    {
+        "page": 13,
+        "text": ""
+    }
+]
