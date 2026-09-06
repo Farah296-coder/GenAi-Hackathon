@@ -1,0 +1,30 @@
+[
+  {
+    "question_type": "MCQ",
+    "question": "What is the primary purpose of using generic classes in programming?",
+    "correct_answer": "To allow type safety while reusing code",
+    "choices": [
+      "To allow type safety while reusing code",
+      "To increase runtime performance",
+      "To simplify syntax",
+      "To enforce inheritance hierarchies"
+    ],
+    "source_page": 3
+  },
+  {
+    "question_type": "True-False",
+    "question": "Generic classes allow the same code to work with different data types.",
+    "correct_answer": "True",
+    "choices": [
+      "True",
+      "False"
+    ],
+    "source_page": 3
+  },
+  {
+    "question_type": "Short Answer",
+    "question": "What is the purpose of using generic methods in programming?",
+    "correct_answer": "To allow methods to operate on objects of various types while providing compile-time type safety.",
+    "source_page": 3
+  }
+]

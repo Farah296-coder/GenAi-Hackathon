@@ -1,0 +1,44 @@
+[
+  {
+    "question": "What is the primary purpose of using generic classes in programming?",
+    "question_type": "MCQ",
+    "source_page": 3,
+    "judge_scores": {
+      "correctness": 0.0,
+      "groundedness": 0.0,
+      "clarity": 1.0
+    },
+    "judge_feedback": "The source text does not mention type safety or reuse, so the marked answer cannot be verified. The question itself is clear.",
+    "mcq_issues": [],
+    "overall_score": 0.3,
+    "passed": false
+  },
+  {
+    "question": "Generic classes allow the same code to work with different data types.",
+    "question_type": "True-False",
+    "source_page": 3,
+    "judge_scores": {
+      "correctness": 0.0,
+      "groundedness": 0.0,
+      "clarity": 1.0
+    },
+    "judge_feedback": "The source text does not mention that generic classes allow the same code to work with different data types, so the statement cannot be verified from the provided text. The question is, however, clearly worded.",
+    "mcq_issues": [],
+    "overall_score": 0.222,
+    "passed": false
+  },
+  {
+    "question": "What is the purpose of using generic methods in programming?",
+    "question_type": "Short Answer",
+    "source_page": 3,
+    "judge_scores": {
+      "correctness": 0.0,
+      "groundedness": 0.0,
+      "clarity": 1.0
+    },
+    "judge_feedback": "The question is clearly worded, but the source text does not mention the purpose of generic methods or compile‑time type safety, so the answer cannot be verified from the given source.",
+    "mcq_issues": [],
+    "overall_score": 0.222,
+    "passed": false
+  }
+]
